@@ -1,0 +1,3 @@
+<!--pages/promotionDetail/promotionDetail.wxml-->
+<text>{{value}}</text>
+{{value}}

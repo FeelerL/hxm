@@ -1,0 +1,29 @@
+<!--pages/classify/classify.wxml-->
+<view class="content">
+  <view class='seller'>
+    <image src='/assets/img/mcd.jpg' mode='widthFix'></image>
+    <text>厦门麦当劳集美万达店</text>
+  </view>
+  <view class='nav'>
+    <view class='nav_left'>
+      <block wx:for="{{cateItems}}">
+        <view class="nav_left_items {{curNav == item.cate_id ? 'active' : ''}}"bindtap='switchRightTab' data-index='{{index}}' data-id='{{item.cate_id}}'>{{item.cate_name}}</view>
+      </block>
+    </view>
+    <view class='nav_right'>
+      <view wx:if="{{cateItems[curIndex].ishaveChild}}">
+        <block wx:for="{{cateItems[curIndex].children}}">
+          <view class='nav_right_items'>
+            <navigator url='../detail/detail'>
+              <image class='nav_right_items_img' src='{{item.image}}' mode='widthFix'></image>
+              <text class='nav_right_items_txt'>{{item.name}}</text>
+            </navigator>
+            <text>￥{{item.price}}</text>
+            <image class='addIcon' src='/assets/img/add.jpg' mode='widthFix'></image>
+          </view>
+        </block>
+      </view>
+      <view class='nodata_text' wx:else>该分类暂无数据</view>
+    </view>
+  </view>
+</view>
