@@ -14,12 +14,16 @@
       <view wx:if="{{cateItems[curIndex].ishaveChild}}">
         <block wx:for="{{cateItems[curIndex].children}}">
           <view class='nav_right_items'>
-            <navigator url='../detail/detail'>
-              <image class='nav_right_items_img' src='{{item.image}}' mode='widthFix'></image>
-              <text class='nav_right_items_txt'>{{item.name}}</text>
-            </navigator>
-            <text>￥{{item.price}}</text>
-            <image class='addIcon' src='/assets/img/add.jpg' mode='widthFix'></image>
+            <text class='nav_right_items_txt'>{{item.name}}</text>
+            <view class='nav_right_items_detail'>
+              <navigator url='../detail/detail'>
+                <image class='nav_right_items_img' src='{{item.image}}' mode='widthFix'></image>
+              </navigator>
+              <view class='nav_right-items_text'>
+                <text>￥{{item.price}}</text>
+                <image class='addIcon' src='/assets/img/add.jpg' mode='widthFix'></image>
+              </view>
+            </view>
           </view>
         </block>
       </view>

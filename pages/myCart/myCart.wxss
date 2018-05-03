@@ -69,7 +69,7 @@
   background: white;
 }
 .button-red {
-  background-color: #f44336; /* 红色 */
+  background-color: #FEC425; 
 }
 button {
   position: fixed;

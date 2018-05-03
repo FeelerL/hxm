@@ -7,7 +7,19 @@
     "pages/shopDetail/shopDetail",
     "pages/promotionDetail/promotionDetail",
     "pages/order/order",
-    "pages/detail/detail"
+    "pages/detail/detail",
+    "pages/all/all",
+    "pages/good/good",
+    "pages/search/search",
+    "pages/hot/hot",
+    "pages/star/star",
+    "pages/idea/idea",
+    "pages/userinfoModify/userinfoModify",
+    "pages/address/address",
+    "pages/favorite/favorite",
+    "pages/service/service",
+    "pages/addressAdd/addressAdd",
+    "pages/addressModify/addressModify"
   ],
   "window":{
     "backgroundTextStyle":"light",

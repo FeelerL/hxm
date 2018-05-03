@@ -3,7 +3,7 @@
   <view class="separate"></view>
   <view wx:for="{{carts}}">
     <view class="cart_container">
-      <image class="item-select" bindtap="switchSelect" data-index="{{index}}" data-id="{{index}}" src="{{item.isSelect?'/assets/img/refund.png':'/assets/img/delete.png'}}" />
+      <image class="item-select" bindtap="switchSelect" data-index="{{index}}" data-id="{{index}}" src="{{item.isSelect?'/assets/img/selected.png':'/assets/img/unselected.png'}}" />
 
       <image class="item-image" src="{{item.pic}}"></image>
 
@@ -26,7 +26,7 @@
   <view class="bottom_line"></view>
 
   <view class="row">
-    <image class="item-allselect" bindtap="allSelect" src="{{isAllSelect?'/assets/img/refund.png':'/assets/img/delete.png'}}" />
+    <image class="item-allselect" bindtap="allSelect" src="{{isAllSelect?'/assets/img/selected.png':'/assets/img/unseleted.png'}}" />
     <text class="small_text">全选</text>
     <text>合计:￥ </text>
     <text class="price">{{totalMoney}}</text>

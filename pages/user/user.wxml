@@ -1,4 +1,9 @@
 <view class='content'>
+  <view class="userinfo" catchtap='toUserInfo'>
+    <image src="{{userIcon}}" mode="widthFix"></image>
+    <text>{{userName}}</text>
+  </view>
+
   <view class="order" catchtap="toOrder">
     <text class="myorder-text">我的订单</text>
     <text class="myorderlook-text">查看全部订单</text>
@@ -16,27 +21,27 @@
 
   <view class="separate"></view>
   <view class="person-list">
-    <view class="list-item" bindtap='listClick'>
+    <view class="list-item" catchtap='toAddress'>
       <image class="item-image" src="/assets/img/address.png"></image>
       <text class="item-text">收货地址</text>
     </view>
     <view class="person-line"></view>
-    <view class="list-item">
+    <view class="list-item" catchtap='tofavorite'>
       <image class="item-image" src="/assets/img/favorite.png"></image>
       <text class="item-text">我的收藏</text>
     </view>
     <view class="person-line"></view>
-    <view class="list-item">
+    <view class="list-item" catchtap='toService'>
       <image class="item-image" src="/assets/img/service.png"></image>
       <text class="item-text">我的客服</text>
     </view>
     <view class="person-line"></view>
-    <view class="list-item">
+    <view class="list-item" catchtap='toPlatform'>
       <image class="item-image" src="/assets/img/platform.png"></image>
       <text class="item-text">访问平台</text>
     </view>
     <view class="person-line"></view>
-    <view class="list-item">
+    <view class="list-item" catchtap='showVerson'>
       <image class="item-image" src="/assets/img/verson.png"></image>
       <text class="item-text">版本信息</text>
     </view>

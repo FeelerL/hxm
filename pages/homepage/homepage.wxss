@@ -1,35 +1,39 @@
 /* pages/homepage/homepage.wxss */
 .seller{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   border-bottom: dashed #C8C8C8 1px;
+  height: 100rpx;
+  padding: 20rpx
 }
 
 .logo{
-  margin-top: 20rpx;
-  width: 150rpx;
+  width: 100rpx;
+  border-radius: 50%;
+  margin: 10rpx;
 }
 
-.seller-name{
-  font-size: 23px;
+.seller_name{
+  font-size: 17px;
+  margin-left: 10rpx;
 }
 
-.seller-intro{
-  font-size: 14px;
+.seller_intro{
+  font-size: 12px;
   color: #9D9D9D;
-  margin-bottom: 10rpx;
+  margin-left: 10rpx;
 }
 
 .promotion{
-  margin: 20rpx;
+  margin-top: 20rpx;
 }
 
 .slide-image{
   width: 100%;
 }
 
-.goodsRecommend{
+.block{
   display: flex;
   flex-wrap: wrap;
 }
@@ -61,83 +65,55 @@
   justify-content: space-between;
 }
 
-.cart{
-	width:100%;
-	height:100rpx;
-	box-sizing: border-box;
-	position: fixed;
-	bottom: 0;
-	left:0;
-	z-index: 1000;
-  align-items: center;
-}
-.cartParent{
-	width:100%;
-	height:100rpx;
-	background: #000;
-	opacity: 0.7;
-	box-sizing: border-box;
-	position: relative;
-}
-.cartChild{
-	width:750rpx;
-	height:100rpx;
-	position: fixed;
-	bottom:0;
-	z-index: 1400;
-}
-.cartImg{
-	opacity: 1;
-	float:left;
-	width:100rpx;
-	height:100rpx;
-	border-radius: 50%;
-	border:solid 1px #fff;
-	text-align: center;
-	line-height: 100rpx;
-	background: #404040;
-	box-sizing: border-box;
-	padding-top: 20rpx;
-	margin-left: 40rpx;
-}
-.sumPrice{
-	width:200rpx;
-	height:100rpx;
-	float:left;
-	box-sizing: border-box;
-	color:#fff;
-	line-height: 100rpx;
-	padding-left:20rpx;
-}
-.addPay{
-	float:right;
-	width:200rpx;
-	height:100rpx;
-	box-sizing: border-box;
-	color:#fff;
-	line-height: 100rpx;
-	text-align: center;
-	font-weight: bold;
-	background: #4cd964
-}
-
-.label{
-  display: flex;
-  flex-wrap: nowrap;
-  background-color: #F9F9F7;
-}
-
-.labelDetail{
+.func_blockStyle1{
+  width: 30%;
+  height: 230rpx;
+  background-color: #FEC425;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 20rpx 10rpx 20rpx;
+  justify-content: center;
+  margin: 10rpx;
 }
 
-.labelImg{
-  width: 150rpx;
+.func_blockStyle1 image {
+  width: 100rpx
+}
+.func_blockStyle2 image {
+  width: 100rpx
 }
 
-.labelName{
-  font-size: 12px;
+.func_blockStyle1 text{
+  font-size: 13px;
+  margin-top: 5rpx;
+}
+
+.func_blockStyle1 navigator{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.func_blockStyle2 text{
+  font-size: 13px;
+  margin-top: 5rpx;
+}
+
+.func_blockStyle2{
+  width: 63%;
+  height: 230rpx;
+  background-color: #FED772;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10rpx;
+}
+
+.func_blockStyle2 navigator{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

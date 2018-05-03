@@ -1,11 +1,13 @@
 // pages/order/order.js
+var app=getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    navbar: ['全部订单','待付款', '待发货', '待收货', '待评价'],
+    currentTab: 0,
   },
 
   /**
@@ -62,5 +64,11 @@ Page({
    */
   onShareAppMessage: function () {
   
-  }
+  },
+  navbarTap: function (e) {
+    console.debug(e);
+    this.setData({
+      currentTab: e.currentTarget.dataset.idx
+    })
+  },
 })

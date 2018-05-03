@@ -1,4 +1,4 @@
-Page(Object.assign({}, Temp.Quantity, {
+Page({
   data: {
     isAllSelect: false,
     totalMoney: 0,
@@ -55,7 +55,7 @@ Page(Object.assign({}, Temp.Quantity, {
       {
         pic: '/assets/img/snack-5.jpg',
         name: "那么大小食盒",
-        price: 289,
+        price: 59,
         isSelect: false,
         // 数据设定
         count: {
@@ -152,4 +152,4 @@ Page(Object.assign({}, Temp.Quantity, {
       carts: this.data.carts,
     });
   }
-}));
+})

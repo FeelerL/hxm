@@ -1,4 +1,8 @@
 // pages/homepage/homepage.js
+import Http from '../../utils/http';
+//获取应用实例
+const app = getApp()
+
 Page({
 
   /**
@@ -16,33 +20,61 @@ Page({
   ],
   suit:[
     {
-      id: 1,url: '/assets/img/new-1.jpg',name: '那么大鲜柠特饮',
-      sale: 100,praise: '100%',price: 13,
+      id: "1",
+      name: "全部商品",
+      url: "/assets/img/all.png",
+      style: "2",
+      link: "../all/all"
     },
     {
-      id: 2,url: '/assets/img/classic-1.jpg',name: '麦辣鸡腿堡',
-      sale: 85,praise: '96%',price: 25,
+      id: "2",
+      name: "好物推荐",
+      url: "/assets/img/good.png",
+      style: "1",
+      link: "../good/good"
     },
     {
-      id: 3,url: '/assets/img/classic-2.jpg',name: '原味板烧鸡腿堡',
-      sale: 124,praise: "98%",price: 27,
+      id: "3",
+      name: "商品搜索",
+      url: "/assets/img/search.png",
+      style: "1",
+      link: "../search/search"
     },
     {
-      id: 4,url: '/assets/img/snack-1.jpg',name: '麦辣鸡翅',
-      sale: 286,praise: '99%',price: 10,
+      id: "4",
+      name: "热销推荐",
+      url: "/assets/img/hot.png",
+      style: "1",
+      link: "../hot/hot"
     },
     {
-      id: 5,url: '/assets/img/snack-2.jpg',name: '香骨鸡腿',
-      sale: 37,praise: '100%',price: 11,
+      id: "5",
+      name: "访问平台",
+      url: "/assets/img/plat.png",
+      style: "1",
+      link: "../plat/plat"
     },
     {
-      id: 6, url: '/assets/img/star-2.jpg', name: '俄式红肠双鸡堡组合',
-      sale: 37, praise: '100%', price: 18,
+      id: "6",
+      name: "版本信息",
+      url: "/assets/img/verson.png",
+      style: "1",
+      link: "../verson/verson"
     },
     {
-      id: 7, url: '/assets/img/star-1.jpg', name: '星厨鲜脆纯牛堡',
-      sale: 37, praise: '100%', price: 36,
+      id: "7",
+      name: "镇店之宝",
+      url: "/assets/img/star.png",
+      style: "1",
+      link: "../star/star"
     },
+    {
+      id: "8",
+      name: "彩蛋",
+      url: "/assets/img/idea.png",
+      style: "1",
+      link: "../idea/idea"
+    }
   ],
   },
 
@@ -50,7 +82,64 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that = this;
+    // 获取用户授权及信息
+    Http.authorize()
+      .then(() => Http.getUserInfo())
+      .then((res) => {
+        console.log(res);
+        //用户信息数据处理操作
+
+        // if (!app.globalData.isReAuth) {
+        //   that.setData({
+        //     userInfo: res
+        //   })
+        //   try {
+        //     var ssid = wx.getStorageSync('ssid')
+        //     if (ssid) {
+        //       if (!app.globalData.changeState) {
+        //         that.getFavData(ssid);
+        //       }
+        //     }
+        //   } catch (e) {
+        //     console.log(e);
+        //   }
+        // }
+      }).catch(() => {
+        Http.getUserInfo().then((res) => {
+          // that.setData({
+          //   userInfo: res
+          // })
+          // try {
+          //   var ssid = wx.getStorageSync('ssid')
+          //   if (ssid) {
+          //     that.getFavData(ssid);
+          //   }
+          // } catch (e) {
+          //   console.log(e);
+          // }
+        })
+      })
+    //登录
+    Http.login().then((res) => {
+      // 获取到code之后的操作
+      // 获取openid
+      Http.get('api/wxapp/public/login', { code: res.code, app_type: 'WX_MM_MANAGE' }).then(
+        (res) => {
+          if (res.data.success && res.data.data.openid != '' && res.data.data.token != '') {
+            wx.setStorageSync('openid', res.data.data.openid);
+            wx.setStorageSync('Token', res.data.data.token);
+          } else {
+            //获取openid失败操作
+          }
+        }
+      );
+    })
+    var self = this
+    //正常异步请求
+    // Http.get('userinfo').then(function (res) {
+    //   //返回数据处理
+    // });
   },
 
   /**
@@ -113,29 +202,4 @@ Page({
       current: e.detail.current
     })
   },
-  addSuit: function (e) {
-    console.log("用户点击");
-    console.log(item.key);
-  },
-  linkToDetail: function (){
-    
-  },
-  cartClick: function () {
-    wx.navigateTo({
-      url: '../myCart/myCart',
-    })
-    console.log("用户点击");
-  },
-  payClick: function (){
-    wx.navigateTo({
-      url: '../myCart/myCart',
-    })
-    console.log("用户点击");
-  },
-  addSuit: function (e){
-    
-  },
-  labelClick: function (e){
-    console.log(e);
-  }
 })

@@ -1,0 +1,62 @@
+/* pages/address/address.wxss */
+page {
+  height: 95%;
+  background: #F5F5F5;
+}
+/*上部分的样式*/
+.list {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   padding: 20rpx 30rpx 10rpx 30rpx;
+   background: #fff;
+   border-bottom: 1px solid #b0b0b0;
+   
+}
+.list-detail{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: -20rpx;
+  margin-left: 30rpx;
+}
+
+/*上部分第一行text*/
+
+.list-detail-firstline-address {
+  font-size: 30rpx;
+  font-weight: bold;
+
+}
+/*上部分第二行text*/
+.list-detail-secondline {
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  
+}
+
+.list-detail-secondline-name {
+  font-size: 30rpx;
+  font-weight: 400;
+  margin: 0rpx 10rpx 10rpx 0rpx;
+}
+.list-detail-secondline-phone {
+  font-size: 30rpx;
+  font-weight: 400;
+  margin: 0rpx 10rpx 10rpx 0rpx;
+}
+
+.list-modify-img{
+  width: 50rpx;
+  align-self: flex-end;
+}
+
+.addBtn {
+  margin-top: 40rpx;
+  font-size: 32rpx;
+  padding: 7rpx 0rpx;
+  width: 90%;
+  color: white;
+  background: #6c6c6c
+}

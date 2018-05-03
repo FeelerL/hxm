@@ -165,6 +165,30 @@ Page({
             price: '7'
           }
         ]
+      }, 
+      {
+        cate_id: 5,
+        cate_name: "开心儿童餐",
+        ishaveChild: false,
+        children: []
+      },
+      {
+        cate_id: 6,
+        cate_name: "主食",
+        ishaveChild: false,
+        children: []
+      },
+      {
+        cate_id: 7,
+        cate_name: "饮品",
+        ishaveChild: false,
+        children: []
+      },
+      {
+        cate_id: 8,
+        cate_name: "麦咖啡",
+        ishaveChild: false,
+        children: []
       }
     ],
     curNav: 1,
@@ -175,7 +199,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
   },
 
   /**

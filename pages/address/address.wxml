@@ -1,0 +1,20 @@
+<!--pages/address/address.wxml-->
+<view class='content'>
+  <block wx:for='{{addressList}}'>
+  	<view class="list">
+      <view class="list-detail">
+        <view class="list-detail-firstline">
+          <text class="list-detail-firstline-address">{{item.address}}</text>
+        </view>
+        <view class="list-detail-secondline">
+          <text class="list-detail-secondline-name">{{item.name}}</text>
+          <text class="list-detail-secondline-phone">{{item.phone}}</text>
+        </view>
+      </view>
+      <view class='list-image' catchtap='toAddressModify'>
+        <image class="list-modify-img" src="/assets/img/modify.png" mode='widthFix' />
+      </view>
+    </view>
+  </block>
+  <button bindtap="toAddressAdd" class="addBtn">新增地址</button>
+</view>

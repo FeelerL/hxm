@@ -3,12 +3,8 @@
   <view class='seller'>
     <image class='logo' src='{{sellerLogo}}' mode='widthFix'></image>
     <view class='sellerInfo'>
-      <view class='seller-name'>
-        {{sellerName}}
-      </view>
-      <view class='seller-intro'>
-        {{sellerIntro}}
-      </view>
+      <view class='seller_name'>{{sellerName}}</view>
+      <view class='seller_intro'>{{sellerIntro}}</view>
     </view>
   </view>
 
@@ -20,56 +16,20 @@
     </block>
   </swiper>
 
-  <view class='label'>
-    <view class='labelDetail'>
-      <image src='/assets/img/new.jpg' mode='widthFix' bindtap='labelClick' class='labelImg'></image>
-      <text class='labelName'>新品推荐</text>
-    </view>
-    <view class='labelDetail'>
-      <image src='/assets/img/star.jpg' mode='widthFix' bindtap='labelClick' class='labelImg'></image>
-      <text class='labelName'>星厨系列</text>
-    </view>
-    <view class='labelDetail'>
-      <image src='/assets/img/classic.jpg' mode='widthFix' bindtap='labelClick' class='labelImg'></image>
-      <text class='labelName'>经典套餐</text>
-    </view>
-    <view class='labelDetail'>
-      <image src='/assets/img/snack.jpg' mode='widthFix' bindtap='labelClick' class='labelImg'></image>
-      <text class='labelName'>小食甜品</text>
-    </view>
-  </view>
-
-  <view class='goodsRecommend'>
+  <view class='block'>
     <block wx:for='{{suit}}'>
-    <view class='goods' >
-      <image class='suitImg' src="{{item.url}}" mode='widthFix' bindtap='linkToDetail' wx:for-item="url"></image>
-      <view class='suitName' wx:for-item="name">{{item.name}}</view>
-      <view class='suitInfo1'>
-        <view class='suitSales' wx:for-item="sale">月售 {{item.sale}}</view>
-        <view class='suitPraise' wx:for-item="praise">好评率 {{item.praise}}</view>
+      <view wx:if="{{item.style==1}}" class='func_blockStyle1'>
+        <navigator url='{{item.link}}'>
+          <image class='suitImg' src="{{item.url}}" mode='widthFix' bindtap='linkToDetail' wx:for-item="url"></image>
+          <text wx:for-item="name">{{item.name}}</text>
+        </navigator>
       </view>
-      <view class='suitInfo2'>
-        <view class='suitPrice' wx:for-item="price">￥{{item.price}}</view>
-        <image class='addSuit' src='{{addSuitImg}}' mode='widthFix' bindtap='addSuit' wx:for-key="id"></image>
+      <view wx:else class='func_blockStyle2'>
+        <navigator url='{{item.link}}'>
+          <image class='suitImg' src="{{item.url}}" mode='widthFix' bindtap='linkToDetail' wx:for-item="url"></image>
+          <text wx:for-item="name">{{item.name}}</text>
+        </navigator>
       </view>
-    </view>
     </block>
   </view>
-
-  <view class="cart">
-    <view class="cartParent">
-    </view>
-    <view class="cartChild">
-      <view class="cartImg" bindtap='cartClick'>
-        <image style="width:70rpx;height:70rpx;" src="/assets/img/cart.png" ></image>
-      </view>
-      <view  wx:if="{{sumPrice > 0}}" class="sumPrice">
-        <text>￥{{sumPrice}}</text>		
-        </view>
-      <view wx:else class='sumPrice'>
-        <text>暂未选购商品</text>
-      </view>
-    <view class="addPay" bindtap='payClick'>去结算</view>
-	</view>
-</view>
 </view>

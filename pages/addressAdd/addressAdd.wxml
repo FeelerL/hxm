@@ -1,0 +1,22 @@
+<!--pages/addressAdd/addressAdd.wxml-->
+<view class='content'>
+  <view class="section">
+    <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+      <view class="content-region">
+        <text class='content-region-item'>{{region[0]}}</text>
+        <text class='content-region-item'>{{region[1]}}</text>
+        <text class='content-region-item'>{{region[2]}}</text>
+      </view>
+    </picker>
+  </view>
+  <view class='content-address'>
+    <input placeholder='请输入详细地址' placeholder-style="color:black" bindblur='bindAddressChange'></input>
+  </view>
+  <view class='content-name'>
+    <input placeholder='请输入姓名' placeholder-style="color:black" bindblur='bindNameChange'></input>
+  </view>
+  <view class='content-phone'>
+    <input placeholder='请输入手机号码' placeholder-style="color:black" bindblur='bindPhoneChange'></input>
+  </view>
+  <button class='btn' catchtap='saveAddress'>保存地址</button>
+</view>
